@@ -1,0 +1,6 @@
+SET DECOMPILER="C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\ildasm.exe"
+SET CLASS_NAME=MyCalc
+SET IL_SOURCE=%CLASS_NAME%.il
+SET EXECUTABLE=%CLASS_NAME%.exe
+
+%DECOMPILER% %EXECUTABLE% /text > %IL_SOURCE%
