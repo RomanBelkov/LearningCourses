@@ -1,0 +1,13 @@
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\obj\Debug\HomeworkFs.fsprojResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkFs.XML
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkFs.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkFs.pdb
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\FSharp.Core.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkCs.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkVb.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkCs.pdb
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkVb.pdb
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\HomeworkVb.xml
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\bin\Debug\FSharp.Core.xml
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\obj\Debug\HomeworkFs.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkFs\obj\Debug\HomeworkFs.pdb

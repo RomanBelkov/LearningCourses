@@ -1,0 +1,17 @@
+  HomeworkVb.Resources.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly HomeworkVb, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly HomeworkCs, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Class HomeworkVb.Medved: AutoLayout, AnsiClass, Class, Public
+  :HomeworkCs.Medved
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    MeetMedved(): PrivateScope, Public, Virtual, HideBySig, CheckAccessOnOverride

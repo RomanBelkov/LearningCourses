@@ -1,0 +1,11 @@
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\bin\Debug\HomeworkVb.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\bin\Debug\HomeworkVb.pdb
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\bin\Debug\HomeworkVb.xml
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\bin\Debug\HomeworkCs.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\bin\Debug\HomeworkCs.pdb
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\obj\Debug\HomeworkVb.vbprojResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\obj\Debug\HomeworkVb.Resources.resources
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\obj\Debug\HomeworkVb.vbproj.GenerateResource.Cache
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\obj\Debug\HomeworkVb.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\obj\Debug\HomeworkVb.xml
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkVb\obj\Debug\HomeworkVb.pdb

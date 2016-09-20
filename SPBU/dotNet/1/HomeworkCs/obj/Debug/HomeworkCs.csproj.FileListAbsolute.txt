@@ -1,0 +1,5 @@
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkCs\bin\Debug\HomeworkCs.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkCs\bin\Debug\HomeworkCs.pdb
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkCs\obj\Debug\HomeworkCs.csprojResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkCs\obj\Debug\HomeworkCs.dll
+c:\users\roman\documents\visual studio 2015\Projects\Homework1\HomeworkCs\obj\Debug\HomeworkCs.pdb
