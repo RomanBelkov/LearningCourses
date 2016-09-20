@@ -2,15 +2,17 @@
 
 namespace Palindrome
 {
-    internal class Program
+    internal sealed class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            Console.WriteLine("Type a string:");
-            var s = Console.ReadLine();
-            Console.WriteLine(PalindromeDetector.IsPalindrome(s) ? "Palindrome" : "Not a palindrome");
+            while (true)
+            {
+                Console.WriteLine("Type a string and press Enter. Type 'q' to exit");
+                var s = Console.ReadLine();
+                if (s == "q") return;
+                Console.WriteLine(PalindromeDetector.IsPalindrome(s) ? "Palindrome" : "Not a palindrome");
+            }
         }
     }
 }
-
-

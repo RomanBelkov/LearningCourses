@@ -7,7 +7,7 @@ class MyCalc
 	private const int minBound = 1;
 	private const int maxBound = 10;
 
-	private static int getRandomNumber() 
+	private static int GetRandomNumber() 
 	{
 		return rnd.Next(minBound, maxBound + 1);
 	}
@@ -17,10 +17,10 @@ class MyCalc
 		Console.WriteLine("Я — интеллектуальный калькулятор!");
 		Console.WriteLine("Как тебя зовут?");
 		var userName = Console.ReadLine();
-		var a = getRandomNumber();
-		var b = getRandomNumber();
+		var a = GetRandomNumber();
+		var b = GetRandomNumber();
 
-		Console.WriteLine("Сколько будет {0} + {1}?", a, b);
+		Console.WriteLine("Сколько будет {0} {1} {2}?", a, "+", b);
 		try
 		{
 	    	var answer = Int32.Parse(Console.ReadLine());

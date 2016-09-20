@@ -2,7 +2,7 @@
 
 namespace Palindrome
 {
-    internal class PalindromeDetector
+    internal sealed class PalindromeDetector
     {
         private static bool IsDelimiter(char c)
         {
@@ -16,6 +16,7 @@ namespace Palindrome
 
         public static bool IsPalindrome(string s)
         {
+            if (s == null) throw new ArgumentNullException(nameof(s));
             var i = 0;
             var j = s.Length - 1;
 
