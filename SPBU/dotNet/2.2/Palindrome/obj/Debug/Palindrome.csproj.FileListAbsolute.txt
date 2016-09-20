@@ -1,0 +1,5 @@
+C:\Users\roman\RiderProjects\Palindrome\Palindrome\bin\Debug\Palindrome.exe
+C:\Users\roman\RiderProjects\Palindrome\Palindrome\bin\Debug\Palindrome.pdb
+C:\Users\roman\RiderProjects\Palindrome\Palindrome\obj\Debug\Palindrome.csprojResolveAssemblyReference.cache
+C:\Users\roman\RiderProjects\Palindrome\Palindrome\obj\Debug\Palindrome.exe
+C:\Users\roman\RiderProjects\Palindrome\Palindrome\obj\Debug\Palindrome.pdb
