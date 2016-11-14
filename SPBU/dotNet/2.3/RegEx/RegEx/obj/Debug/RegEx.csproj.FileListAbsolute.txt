@@ -3,3 +3,8 @@ C:\Users\RB\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\bin\Deb
 C:\Users\RB\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\obj\Debug\RegEx.csprojResolveAssemblyReference.cache
 C:\Users\RB\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\obj\Debug\RegEx.exe
 C:\Users\RB\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\obj\Debug\RegEx.pdb
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\bin\Debug\RegEx.exe
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\bin\Debug\RegEx.pdb
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\obj\Debug\RegEx.csprojResolveAssemblyReference.cache
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\obj\Debug\RegEx.exe
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\2.3\RegEx\RegEx\obj\Debug\RegEx.pdb

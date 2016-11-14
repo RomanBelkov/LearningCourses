@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace RegEx
 {
-    internal class Program
+    internal sealed class Program
     {
         public static void Main(string[] args)
         {
@@ -13,13 +12,13 @@ namespace RegEx
 
             while (true)
             {
-                Console.WriteLine("Type a string and press Enter. Empty string to exit");
-                var s = Console.ReadLine();
-                if (s == "") return;
+                Console.WriteLine("Type a string and press Enter. Input empty string to exit");
+                var input = Console.ReadLine();
+                if (input == "") return;
 
-                postCodeValidator.CheckIfValid(s);
-                phoneValidator.CheckIfValid(s);
-                emailValidator.CheckIfValid(s);
+                postCodeValidator.CheckIfValid(input);
+                phoneValidator.CheckIfValid(input);
+                emailValidator.CheckIfValid(input);
             }
         }
     }

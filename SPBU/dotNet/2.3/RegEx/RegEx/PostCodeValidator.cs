@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace RegEx
+﻿namespace RegEx
 {
     internal sealed class PostCodeValidator : InputValidator
     {
