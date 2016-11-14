@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Resources;
 using World.Humans;
 
 namespace World
@@ -13,19 +14,19 @@ namespace World
             Console.WriteLine(Properties.Resources.Welcome);
             if (DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
             {
-                Console.WriteLine(Properties.Resources.DoNotWorkOnSunday);
+                Console.WriteLine(Properties.Resources.NoSundayWork);
                 return;
             }
             var isInt = true;
             var humansToCreate = 0;
             do
             {
-                Console.WriteLine(Properties.Resources.HumansNum);
+                Console.WriteLine(Properties.Resources.HumansAmountQuestion);
                 var readLine = Console.ReadLine();
                 if (readLine != null) isInt = int.TryParse(readLine.Trim(), out humansToCreate);
                 if (!isInt || (humansToCreate <= 0))
                 {
-                    Console.WriteLine(Properties.Resources.InvalidHumansNum);
+                    Console.WriteLine(Properties.Resources.InvalidHumansAmount);
                 }
             } while (!isInt || (humansToCreate <= 0));
 
@@ -60,7 +61,7 @@ namespace World
         private static void SaveTotalMoney(God god)
         {
             File.WriteAllText(OutputFile, god.GetTotalMoney().ToString());
-            Console.WriteLine(string.Format(Properties.Resources.MoneySaved, OutputFile));
+            Console.WriteLine(string.Format(Properties.Resources.SavedMoney, OutputFile));
         }
 
         private static IEnumerable<Human> GeneratePairs(IGod god, IReadOnlyList<Human> humans)

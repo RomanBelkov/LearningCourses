@@ -1,0 +1,7 @@
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Debug\World.csprojResolveAssemblyReference.cache
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Debug\World.csproj.GenerateResource.Cache
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\bin\Debug\World.exe
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\bin\Debug\World.pdb
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Debug\World.Properties.Resources.resources
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Debug\World.exe
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Debug\World.pdb

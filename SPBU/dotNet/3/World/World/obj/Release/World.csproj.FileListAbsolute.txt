@@ -1,0 +1,6 @@
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\bin\Release\World.exe
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\bin\Release\World.pdb
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Release\World.Properties.Resources.resources
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Release\World.csproj.GenerateResource.Cache
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Release\World.exe
+C:\Users\roman\Documents\GitHub\LearningCourses\SPBU\dotNet\3\World\World\obj\Release\World.pdb
