@@ -9,7 +9,7 @@ namespace RegEx
         internal abstract string SuccessMessage { get; }
         internal abstract string FailMessage { get; }
 
-        public void CheckIfValid(string input)
+        public void PrintInputValidity(string input)
         {
             Console.WriteLine(Regex.Match(input, Pattern).Success ? SuccessMessage : FailMessage);
         }

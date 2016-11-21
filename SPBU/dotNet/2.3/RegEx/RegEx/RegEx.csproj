@@ -45,7 +45,7 @@
     <Compile Include="InputValidator.cs" />
     <Compile Include="PhoneValidator.cs" />
     <Compile Include="PostCodeValidator.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="UniversalValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

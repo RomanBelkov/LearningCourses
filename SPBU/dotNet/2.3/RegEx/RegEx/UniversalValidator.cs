@@ -2,7 +2,7 @@
 
 namespace RegEx
 {
-    internal sealed class Program
+    internal sealed class UniversalValidator
     {
         public static void Main(string[] args)
         {
@@ -16,9 +16,9 @@ namespace RegEx
                 var input = Console.ReadLine();
                 if (input == "") return;
 
-                postCodeValidator.CheckIfValid(input);
-                phoneValidator.CheckIfValid(input);
-                emailValidator.CheckIfValid(input);
+                postCodeValidator.PrintInputValidity(input);
+                phoneValidator.PrintInputValidity(input);
+                emailValidator.PrintInputValidity(input);
             }
         }
     }
