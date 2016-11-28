@@ -7,7 +7,6 @@ namespace Exam.Models
     public sealed class Student
     {
         public string Name { get; }
-        public int Mark { get; internal set; }
         private readonly DeanOffice _deanOffice;
 
         public Student(DeanOffice deanOffice)

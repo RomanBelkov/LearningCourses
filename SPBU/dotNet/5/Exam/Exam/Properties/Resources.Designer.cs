@@ -70,6 +70,15 @@ namespace Exam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exam end.
+        /// </summary>
+        internal static string ExamIsOverCaption {
+            get {
+                return ResourceManager.GetString("ExamIsOverCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student ID.
         /// </summary>
         internal static string StudentId {

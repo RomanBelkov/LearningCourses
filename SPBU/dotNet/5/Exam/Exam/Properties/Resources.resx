@@ -129,4 +129,7 @@
   <data name="StudentName" xml:space="preserve">
     <value>Student Name</value>
   </data>
+  <data name="ExamIsOverCaption" xml:space="preserve">
+    <value>Exam end</value>
+  </data>
 </root>

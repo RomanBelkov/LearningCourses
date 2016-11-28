@@ -81,10 +81,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 370);
+            this.ClientSize = new System.Drawing.Size(561, 292);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.studentsListView);
             this.Controls.Add(this.startButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "ExamForm";
             this.Text = "ExamForm";
             this.ResumeLayout(false);

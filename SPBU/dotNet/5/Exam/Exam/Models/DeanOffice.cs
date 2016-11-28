@@ -8,15 +8,15 @@ namespace Exam.Models
     {
         public ManualResetEvent ExamStartedEvent { get; }
         private readonly object _lock = new object();
-        private readonly IDeanInformer _informer;
+        private readonly IDeanStudentCommunicator _communicator;
 
-        public DeanOffice(IDeanInformer informer)
+        public DeanOffice(IDeanStudentCommunicator communicator)
         {
-            if (informer == null)
+            if (communicator == null)
             {
                 throw new ArgumentNullException();
             }
-            _informer = informer;
+            _communicator = communicator;
             ExamStartedEvent = new ManualResetEvent(false);
         }
 
@@ -33,11 +33,10 @@ namespace Exam.Models
             }
             lock (_lock)
             {
-                _informer.InformStudent(student);
-                Thread.Sleep(Randomizer.GetStudentExaminationTime());
-                student.Mark = Randomizer.GetStudentMark();
-                _informer.InformStudentMark(student);
-                //return Randomizer.GetStudentMark();
+                _communicator.CallStudent(student);
+                //Thread.Sleep(Randomizer.GetStudentExaminationTime());
+                //student.Mark = Randomizer.GetStudentMark();
+                //_communicator.EvaluateStudentKnowledge(student);
             }
         }
     }

@@ -6,7 +6,7 @@ using Exam.Views;
 
 namespace Exam.Controllers
 {
-    public sealed class ExamController : IDeanInformer
+    public sealed class ExamController : IDeanStudentCommunicator
     {
         private readonly IExamView _view;
         private DeanOffice _deanOffice;
@@ -23,22 +23,19 @@ namespace Exam.Controllers
             _view.ExamStarted += OnExamStarted;
         }
 
-        public void InformStudent(Student student)
+        public void CallStudent(Student student)
         {
             if (string.IsNullOrEmpty(student.Name))
             {
                 throw new ArgumentNullException();
             }
-            _view.DisplayStudentName(student);
-        }
+            _view.DisplayStudentName(student, _amountStudentsPassed);
 
-        public void InformStudentMark(Student student)
-        {
-            if (student.Mark < 2 || student.Mark > 5)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            _view.DisplayStudentMark(student);
+            Thread.Sleep(Randomizer.GetStudentExaminationTime());
+
+            var mark = Randomizer.GetStudentMark();
+
+            _view.DisplayStudentMark(mark, _amountStudentsPassed);
             if (_amountStudents == ++_amountStudentsPassed)
             {
                 _view.InformAboutFinish();

@@ -50,7 +50,7 @@
     <Compile Include="Helpers\Names.cs" />
     <Compile Include="Helpers\Randomizer.cs" />
     <Compile Include="Models\DeanOffice.cs" />
-    <Compile Include="Models\IDeanInformer.cs" />
+    <Compile Include="Models\IDeanStudentCommunicator.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Views\ExamForm.cs">
       <SubType>Form</SubType>
