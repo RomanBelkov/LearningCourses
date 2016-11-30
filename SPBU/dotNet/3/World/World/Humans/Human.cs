@@ -8,7 +8,7 @@ namespace World.Humans
         {
             if ((age < 0) || string.IsNullOrEmpty(name))
             {
-                throw new ArgumentException("Invalid human parameters");
+                throw new ArgumentException(Properties.Resources.InvalidHumanParams);
             }
             Age = age;
             Name = name;

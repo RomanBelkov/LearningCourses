@@ -16,7 +16,7 @@ namespace World.Factories
         {
             if (parent == null)
             {
-                throw new ArgumentNullException("null parent");
+                throw new ArgumentNullException(Properties.Resources.NullParent);
             }
             var sex = Randomizer.GetRandomSex();
 

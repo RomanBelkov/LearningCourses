@@ -120,14 +120,53 @@
   <data name="HumansAmountQuestion" xml:space="preserve">
     <value>How many humans do you want to create?</value>
   </data>
+  <data name="InvalidAverageMark" xml:space="preserve">
+    <value>Invalid average mark</value>
+  </data>
+  <data name="InvalidChildsAmount" xml:space="preserve">
+    <value>Invalid amount of childs</value>
+  </data>
+  <data name="InvalidHumanParams" xml:space="preserve">
+    <value>Invalid parameters of human</value>
+  </data>
   <data name="InvalidHumansAmount" xml:space="preserve">
     <value>Invalid amount of humans given</value>
+  </data>
+  <data name="InvalidHumanType" xml:space="preserve">
+    <value>Invalid human type</value>
+  </data>
+  <data name="InvalidMoneyAmount" xml:space="preserve">
+    <value>Invalid amount of money</value>
+  </data>
+  <data name="InvalidParentName" xml:space="preserve">
+    <value>Invalid parentName</value>
+  </data>
+  <data name="InvalidParentNameFromPatronymic" xml:space="preserve">
+    <value>Invalid parent name from patronymic</value>
+  </data>
+  <data name="InvalidPatronymic" xml:space="preserve">
+    <value>Invalid patronymic</value>
+  </data>
+  <data name="InvalidSex" xml:space="preserve">
+    <value>Invalid sex</value>
   </data>
   <data name="NoSundayWork" xml:space="preserve">
     <value>Sunday is a holiday!</value>
   </data>
+  <data name="NullHuman" xml:space="preserve">
+    <value>Null human</value>
+  </data>
+  <data name="NullParent" xml:space="preserve">
+    <value>Null parent</value>
+  </data>
+  <data name="NullStudent" xml:space="preserve">
+    <value>Null student</value>
+  </data>
   <data name="SavedMoney" xml:space="preserve">
     <value>Amount of money were written to file {0}</value>
+  </data>
+  <data name="ShortPatronymic" xml:space="preserve">
+    <value>Patronymic is too short</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>God console here. Create humans or die!</value>

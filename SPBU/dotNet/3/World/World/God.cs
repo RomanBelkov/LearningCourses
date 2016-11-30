@@ -22,7 +22,7 @@ namespace World
         public Human CreateHuman()
         {
             switch (_humans.Count)
-            {
+            {    
                 case 0:
                     return CreateHuman(Sex.Male);
                 case 1:
@@ -34,7 +34,7 @@ namespace World
 
         public Human CreateHuman(Sex sex)
         {
-            var human =  _factories[_rnd.Next(_factories.Count)].CreateHuman(sex);
+            var human = _factories[_rnd.Next(_factories.Count)].CreateHuman(sex);
             _humans.Add(human);
             return human;
         }
@@ -43,7 +43,7 @@ namespace World
         {
             if (human == null)
             {
-                throw new ArgumentNullException("null human");
+                throw new ArgumentNullException(Properties.Resources.NullHuman);
             }
             Human newHuman;
             if (human is Botan)
@@ -64,7 +64,7 @@ namespace World
             }
             else
             {
-                throw new ArgumentException("Wrong human type");
+                throw new ArgumentException(Properties.Resources.InvalidHumanType);
             }
             _humans.Add(newHuman);
             return newHuman;

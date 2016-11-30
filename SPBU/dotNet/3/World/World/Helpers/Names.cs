@@ -23,7 +23,7 @@ namespace World.Helpers
                 case Sex.Female:
                     return (string)FemaleNames.GetValue(Rnd.Next(FemaleNames.Length));
                 default:
-                    throw new NotSupportedException("Invalid sex");
+                    throw new NotSupportedException(Properties.Resources.InvalidSex);
             }
 
         }
@@ -37,7 +37,7 @@ namespace World.Helpers
                 case Sex.Female:
                     return GenerateName(Sex.Male) + WomanPatronymicAddition;
                 default:
-                    throw new NotSupportedException("Invalid sex");
+                    throw new NotSupportedException(Properties.Resources.InvalidSex);
             }
         }
 
@@ -45,7 +45,7 @@ namespace World.Helpers
         {
             if (string.IsNullOrEmpty(parentName))
             {
-                throw new ArgumentException("Invalid parentName");
+                throw new ArgumentException(Properties.Resources.InvalidParentName);
             }
             switch (sex)
             {
@@ -54,7 +54,7 @@ namespace World.Helpers
                 case Sex.Female:
                     return parentName + WomanPatronymicAddition;
                 default:
-                    throw new NotSupportedException("Invalid sex");
+                    throw new NotSupportedException(Properties.Resources.InvalidSex);
             }
         }
 
@@ -62,7 +62,7 @@ namespace World.Helpers
         {
             if ((patronymic == null) || (patronymic.Length <= 4))
             {
-                throw new ArgumentException("Invalid patronymic");
+                throw new ArgumentException(Properties.Resources.InvalidPatronymic);
             }
 
             var substringToRemove = patronymic.Substring(patronymic.Length - AdditionalPatronymicLength, AdditionalPatronymicLength);
@@ -73,7 +73,7 @@ namespace World.Helpers
                 {
                     if (!substringToRemove.Equals(ManPatronymicAddition))
                     {
-                        throw new ArgumentException("Invalid patronymic parentName");
+                        throw new ArgumentException(Properties.Resources.InvalidParentNameFromPatronymic);
                     }
                     break;
                 }
@@ -81,12 +81,12 @@ namespace World.Helpers
                 {
                     if (!substringToRemove.Equals(WomanPatronymicAddition))
                     {
-                        throw new ArgumentException("Invalid patronymic parentName");
+                        throw new ArgumentException(Properties.Resources.InvalidParentNameFromPatronymic);
                     }
                     break;
                 }
                 default:
-                    throw new NotSupportedException("Invalid sex");
+                    throw new NotSupportedException(Properties.Resources.InvalidSex);
             }
 
             return patronymic.Substring(0, patronymic.Length - AdditionalPatronymicLength);

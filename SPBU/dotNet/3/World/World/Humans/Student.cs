@@ -8,7 +8,7 @@ namespace World.Humans
         {
             if (string.IsNullOrEmpty(patronymic))
             {
-                throw new ArgumentException("Invalid patronymic");
+                throw new ArgumentException(Properties.Resources.InvalidPatronymic);
             }
             Patronymic = patronymic;
         }

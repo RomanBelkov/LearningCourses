@@ -4,9 +4,9 @@ namespace World.Helpers
 {
     internal sealed class Money
     {
-        internal static int MarkToMoney(double avgMark)
+        internal static int MarkToMoney(double averageMark)
         {
-            return (int)Math.Pow(10.0, avgMark);
+            return (int)Math.Pow(10.0, averageMark);
         }
 
         internal static double MoneyToMark(int money)

@@ -70,11 +70,92 @@ namespace World.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid average mark.
+        /// </summary>
+        internal static string InvalidAverageMark {
+            get {
+                return ResourceManager.GetString("InvalidAverageMark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid amount of childs.
+        /// </summary>
+        internal static string InvalidChildsAmount {
+            get {
+                return ResourceManager.GetString("InvalidChildsAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid parameters of human.
+        /// </summary>
+        internal static string InvalidHumanParams {
+            get {
+                return ResourceManager.GetString("InvalidHumanParams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid amount of humans given.
         /// </summary>
         internal static string InvalidHumansAmount {
             get {
                 return ResourceManager.GetString("InvalidHumansAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid human type.
+        /// </summary>
+        internal static string InvalidHumanType {
+            get {
+                return ResourceManager.GetString("InvalidHumanType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid amount of money.
+        /// </summary>
+        internal static string InvalidMoneyAmount {
+            get {
+                return ResourceManager.GetString("InvalidMoneyAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid parentName.
+        /// </summary>
+        internal static string InvalidParentName {
+            get {
+                return ResourceManager.GetString("InvalidParentName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid parent name from patronymic.
+        /// </summary>
+        internal static string InvalidParentNameFromPatronymic {
+            get {
+                return ResourceManager.GetString("InvalidParentNameFromPatronymic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid patronymic.
+        /// </summary>
+        internal static string InvalidPatronymic {
+            get {
+                return ResourceManager.GetString("InvalidPatronymic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid sex.
+        /// </summary>
+        internal static string InvalidSex {
+            get {
+                return ResourceManager.GetString("InvalidSex", resourceCulture);
             }
         }
         
@@ -88,11 +169,47 @@ namespace World.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Null human.
+        /// </summary>
+        internal static string NullHuman {
+            get {
+                return ResourceManager.GetString("NullHuman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Null parent.
+        /// </summary>
+        internal static string NullParent {
+            get {
+                return ResourceManager.GetString("NullParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Null student.
+        /// </summary>
+        internal static string NullStudent {
+            get {
+                return ResourceManager.GetString("NullStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount of money were written to file {0}.
         /// </summary>
         internal static string SavedMoney {
             get {
                 return ResourceManager.GetString("SavedMoney", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patronymic is too short.
+        /// </summary>
+        internal static string ShortPatronymic {
+            get {
+                return ResourceManager.GetString("ShortPatronymic", resourceCulture);
             }
         }
         

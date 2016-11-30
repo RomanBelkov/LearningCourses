@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Resources;
 using World.Humans;
 
 namespace World
@@ -18,25 +17,22 @@ namespace World
                 return;
             }
             var isInt = true;
-            var humansToCreate = 0;
-            do
+            var amounOfHumansToCreate = 0;
+            Console.WriteLine(Properties.Resources.HumansAmountQuestion);
+            var readLine = Console.ReadLine();
+            if (readLine != null) isInt = int.TryParse(readLine.Trim(), out amounOfHumansToCreate);
+            if (!isInt || (amounOfHumansToCreate <= 0))
             {
-                Console.WriteLine(Properties.Resources.HumansAmountQuestion);
-                var readLine = Console.ReadLine();
-                if (readLine != null) isInt = int.TryParse(readLine.Trim(), out humansToCreate);
-                if (!isInt || (humansToCreate <= 0))
-                {
-                    Console.WriteLine(Properties.Resources.InvalidHumansAmount);
-                }
-            } while (!isInt || (humansToCreate <= 0));
-
+                Console.WriteLine(Properties.Resources.InvalidHumansAmount);
+                return;
+            }
 
             var god = new God();
-            var createdHumans = GenerateHumans(god, humansToCreate);
-            PrintHumans(createdHumans);
+            var humans = GenerateHumans(god, amounOfHumansToCreate);
+            PrintHumans(humans);
 
-            Console.SetCursorPosition(0, Console.CursorTop - createdHumans.Length * 2 + 1);
-            PrintPairs(GeneratePairs(god, createdHumans));
+            Console.SetCursorPosition(0, Console.CursorTop - humans.Length * 2 + 1); //to printpairs
+            PrintPairs(GeneratePairs(god, humans));
             SaveTotalMoney(god);
         }
 
@@ -61,7 +57,7 @@ namespace World
         private static void SaveTotalMoney(God god)
         {
             File.WriteAllText(OutputFile, god.GetTotalMoney().ToString());
-            Console.WriteLine(string.Format(Properties.Resources.SavedMoney, OutputFile));
+            Console.WriteLine(Properties.Resources.SavedMoney, OutputFile);
         }
 
         private static IEnumerable<Human> GeneratePairs(IGod god, IReadOnlyList<Human> humans)
@@ -76,14 +72,14 @@ namespace World
 
         private static void PrintPairs(IEnumerable<Human> pairs)
         {
-            var background = Console.BackgroundColor;
+            var backgroundColor = Console.BackgroundColor;
             Console.BackgroundColor = ConsoleColor.DarkGray;
             foreach (var pair in pairs)
             {
                 pair.PrintToConsole();
                 Console.SetCursorPosition(0, Console.CursorTop + 1);
             }
-            Console.BackgroundColor = background;
+            Console.BackgroundColor = backgroundColor;
         }
     }
 }

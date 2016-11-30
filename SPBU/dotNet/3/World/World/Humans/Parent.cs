@@ -8,7 +8,7 @@ namespace World.Humans
         {
             if (childsAmount < 0)
             {
-                throw new ArgumentException("Invalid childs number");
+                throw new ArgumentException(Properties.Resources.InvalidChildsAmount);
             }
             ChildsAmount = childsAmount;
         }

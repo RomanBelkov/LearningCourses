@@ -8,7 +8,7 @@ namespace World.Humans
         {
             if (moneyAmount < 0)
             {
-                throw new ArgumentException("Invalid amount of money");
+                throw new ArgumentException(Properties.Resources.InvalidMoneyAmount);
             }
             MoneyAmount = moneyAmount;
         }

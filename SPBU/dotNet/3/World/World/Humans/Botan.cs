@@ -8,7 +8,7 @@ namespace World.Humans
         {
             if ((averageMark < 0) && (averageMark > 5))
             {
-                throw new ArgumentException("Invalid average mark");
+                throw new ArgumentException(Properties.Resources.InvalidAverageMark);
             }
             AverageMark = averageMark;
         }

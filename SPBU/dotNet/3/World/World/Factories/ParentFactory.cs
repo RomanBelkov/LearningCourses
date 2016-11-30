@@ -17,11 +17,11 @@ namespace World.Factories
         {
             if (student == null)
             {
-                throw new ArgumentNullException("null student");
+                throw new ArgumentNullException(Properties.Resources.NullStudent);
             }
             if (student.Patronymic.Length < 5)
             {
-                throw new ArgumentException("Patronymic is too short");
+                throw new ArgumentException(Properties.Resources.ShortPatronymic);
             }
 
             var name = Names.NameFromPatronymic(student.Sex, student.Patronymic);
