@@ -41,11 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\BotanFactory.cs" />
-    <Compile Include="Factories\CoolParentFactory.cs" />
-    <Compile Include="Factories\IHumanFactory.cs" />
-    <Compile Include="Factories\ParentFactory.cs" />
-    <Compile Include="Factories\StudentFactory.cs" />
     <Compile Include="God.cs" />
     <Compile Include="Helpers\Money.cs" />
     <Compile Include="Helpers\Names.cs" />

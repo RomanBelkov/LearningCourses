@@ -196,7 +196,7 @@ namespace World.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Amount of money were written to file {0}.
+        ///   Looks up a localized string similar to Amount of money was written to file {0}.
         /// </summary>
         internal static string SavedMoney {
             get {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using World.Factories;
 using World.Helpers;
 using World.Humans;
 
@@ -9,14 +8,30 @@ namespace World
     internal sealed class God : IGod
     {
         private readonly Random _rnd = new Random();
-        private readonly List<IHumanFactory> _factories = new List<IHumanFactory>();
+
+        readonly List<Func<Sex, Human>> _maleGenerator   = new List<Func<Sex, Human>>();
+        readonly List<Func<Sex, Human>> _femaleGenerator = new List<Func<Sex, Human>>();
+
         private readonly List<Human> _humans = new List<Human>();
         internal God()
         {
-            _factories.Add(new ParentFactory());
-            _factories.Add(new CoolParentFactory());
-            _factories.Add(new StudentFactory());
-            _factories.Add(new BotanFactory());
+            Func<Sex, Human> makeStudent = sex =>
+                new Student(Randomizer.GetRandomStudentAge(), Names.GenerateName(sex), sex, Names.GeneratePatronymic(sex));
+
+            Func<Sex, Human> makeBotan = sex =>
+                new Botan(Randomizer.GetRandomStudentAge(), Names.GenerateName(sex), sex, Names.GeneratePatronymic(sex), Randomizer.GetRandomAverageMark());
+
+            _maleGenerator.Add(makeStudent);
+            _maleGenerator.Add(makeBotan);
+
+            _femaleGenerator.Add(makeStudent);
+            _femaleGenerator.Add(makeBotan);
+
+            _maleGenerator.Add(sex =>
+                new Parent(Randomizer.GetRandomParentAge(), Names.GenerateName(sex), sex, Randomizer.GetRandomChildsAmount()));
+
+            _maleGenerator.Add(sex =>
+                new CoolParent(Randomizer.GetRandomParentAge(), Names.GenerateName(sex), sex, Randomizer.GetRandomChildsAmount(), Randomizer.GetRandomMoneyAmount()));
         }
 
         public Human CreateHuman()
@@ -34,7 +49,9 @@ namespace World
 
         public Human CreateHuman(Sex sex)
         {
-            var human = _factories[_rnd.Next(_factories.Count)].CreateHuman(sex);
+            var human = sex == Sex.Male ?
+                _maleGenerator[_rnd.Next(_maleGenerator.Count)](sex) :
+                _femaleGenerator[_rnd.Next(_femaleGenerator.Count)](sex);
             _humans.Add(human);
             return human;
         }
@@ -48,19 +65,28 @@ namespace World
             Human newHuman;
             if (human is Botan)
             {
-                newHuman = CoolParentFactory.CreatePair((Botan) human);
+                var botan = (Botan) human;
+                var name = Names.NameFromPatronymic(botan.Sex, botan.Patronymic);
+                newHuman = new CoolParent(Randomizer.GetRandomParentAge(botan.Age), name, Sex.Male,
+                    Randomizer.GetRandomChildsAmount(1), Money.MarkToMoney(botan.AverageMark));
             }
             else if (human is CoolParent)
             {
-                newHuman = BotanFactory.CreatePair((CoolParent) human);
+                var coolParent = (CoolParent) human;
+                var sex = Randomizer.GetRandomSex();
+                newHuman = new Botan(Randomizer.GetRandomStudentAge(), Names.GenerateName(sex), sex, Names.PatronymicFromParentName(sex, coolParent.Name), Money.MoneyToMark(coolParent.MoneyAmount));
             }
             else if (human is Student)
             {
-                newHuman = ParentFactory.CreatePair((Student) human);
+                var student = (Student) human;
+                var name = Names.NameFromPatronymic(student.Sex, student.Patronymic);
+                newHuman = new Parent(Randomizer.GetRandomParentAge(student.Age), name, Sex.Male, Randomizer.GetRandomChildsAmount(1));
             }
             else if (human is Parent)
             {
-                newHuman = StudentFactory.CreatePair((Parent) human);
+                var parent = (Parent) human;
+                var sex = Randomizer.GetRandomSex();
+                return new Student(Randomizer.GetRandomStudentAge(), Names.GenerateName(sex), sex, Names.PatronymicFromParentName(sex, parent.Name));
             }
             else
             {

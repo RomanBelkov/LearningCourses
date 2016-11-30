@@ -163,7 +163,7 @@
     <value>Null student</value>
   </data>
   <data name="SavedMoney" xml:space="preserve">
-    <value>Amount of money were written to file {0}</value>
+    <value>Amount of money was written to file {0}</value>
   </data>
   <data name="ShortPatronymic" xml:space="preserve">
     <value>Patronymic is too short</value>
