@@ -1,4 +1,5 @@
 ﻿using System;
+using World.Properties;
 
 namespace World.Humans
 {
@@ -8,7 +9,7 @@ namespace World.Humans
         {
             if (moneyAmount < 0)
             {
-                throw new ArgumentException(Properties.Resources.InvalidMoneyAmount);
+                throw new ArgumentException(Resources.InvalidMoneyAmount);
             }
             MoneyAmount = moneyAmount;
         }
@@ -19,10 +20,10 @@ namespace World.Humans
         {
             var foregroundColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("CoolParent {0}, {1}, age {2}, {3} childs ", Name, Sex, Age, ChildsAmount);
+            Console.Write(Resources.CoolParentParamsOut, Name, Sex, Age, ChildsAmount);
             var backgroundColor = Console.BackgroundColor;
             Console.BackgroundColor = ConsoleColor.Blue;
-            Console.WriteLine("${0}", MoneyAmount);
+            Console.WriteLine(@"${0}", MoneyAmount);
             Console.BackgroundColor = backgroundColor;
             Console.ForegroundColor = foregroundColor;
         }

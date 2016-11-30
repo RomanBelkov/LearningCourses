@@ -9,8 +9,8 @@ namespace World
     {
         private readonly Random _rnd = new Random();
 
-        readonly List<Func<Sex, Human>> _maleGenerator   = new List<Func<Sex, Human>>();
-        readonly List<Func<Sex, Human>> _femaleGenerator = new List<Func<Sex, Human>>();
+        private readonly List<Func<Sex, Human>> _maleGenerator   = new List<Func<Sex, Human>>();
+        private readonly List<Func<Sex, Human>> _femaleGenerator = new List<Func<Sex, Human>>();
 
         private readonly List<Human> _humans = new List<Human>();
         internal God()

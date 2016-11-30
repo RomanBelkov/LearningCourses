@@ -1,4 +1,5 @@
 ﻿using System;
+using World.Properties;
 
 namespace World.Humans
 {
@@ -8,7 +9,7 @@ namespace World.Humans
         {
             if ((age < 0) || string.IsNullOrEmpty(name))
             {
-                throw new ArgumentException(Properties.Resources.InvalidHumanParams);
+                throw new ArgumentException(Resources.InvalidHumanParams);
             }
             Age = age;
             Name = name;
@@ -21,7 +22,7 @@ namespace World.Humans
 
         internal virtual void PrintToConsole()
         {
-            Console.WriteLine("Human {0} {1}, age {2}", Name, Sex, Age);
+            Console.WriteLine(Resources.HumanParamOut, Name, Sex, Age);
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using World.Properties;
 
 namespace World.Humans
 {
@@ -8,7 +9,7 @@ namespace World.Humans
         {
             if (childsAmount < 0)
             {
-                throw new ArgumentException(Properties.Resources.InvalidChildsAmount);
+                throw new ArgumentException(Resources.InvalidChildsAmount);
             }
             ChildsAmount = childsAmount;
         }
@@ -19,7 +20,7 @@ namespace World.Humans
         {
             var foregroundColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Parent {0}, {1}, age {2}, {3} childs", Name, Sex, Age, ChildsAmount);
+            Console.WriteLine(Resources.ParentParamOut, Name, Sex, Age, ChildsAmount);
             Console.ForegroundColor = foregroundColor;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using World.Properties;
 
 namespace World.Humans
 {
@@ -8,7 +9,7 @@ namespace World.Humans
         {
             if ((averageMark < 0) && (averageMark > 5))
             {
-                throw new ArgumentException(Properties.Resources.InvalidAverageMark);
+                throw new ArgumentException(Resources.InvalidAverageMark);
             }
             AverageMark = averageMark;
         }
@@ -19,7 +20,7 @@ namespace World.Humans
         {
             var foregroundColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Botan {0} {1}, {2}, age {3}, {4} average mark", Name, Patronymic, Sex, Age, AverageMark);
+            Console.WriteLine(Resources.BotanParamsOut, Name, Patronymic, Sex, Age, AverageMark);
             Console.ForegroundColor = foregroundColor;
         }
     }

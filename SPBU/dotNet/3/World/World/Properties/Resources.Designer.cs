@@ -61,6 +61,33 @@ namespace World.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Botan {0} {1}, {2}, age {3}, {4} average mark.
+        /// </summary>
+        internal static string BotanParamsOut {
+            get {
+                return ResourceManager.GetString("BotanParamsOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CoolParent {0}, {1}, age {2}, {3} childs .
+        /// </summary>
+        internal static string CoolParentParamsOut {
+            get {
+                return ResourceManager.GetString("CoolParentParamsOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Human {0} {1}, age {2}.
+        /// </summary>
+        internal static string HumanParamOut {
+            get {
+                return ResourceManager.GetString("HumanParamOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How many humans do you want to create?.
         /// </summary>
         internal static string HumansAmountQuestion {
@@ -196,6 +223,15 @@ namespace World.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Parent {0}, {1}, age {2}, {3} childs.
+        /// </summary>
+        internal static string ParentParamOut {
+            get {
+                return ResourceManager.GetString("ParentParamOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount of money was written to file {0}.
         /// </summary>
         internal static string SavedMoney {
@@ -210,6 +246,15 @@ namespace World.Properties {
         internal static string ShortPatronymic {
             get {
                 return ResourceManager.GetString("ShortPatronymic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student {0} {1}, {2}, age {3}.
+        /// </summary>
+        internal static string StudentParamOut {
+            get {
+                return ResourceManager.GetString("StudentParamOut", resourceCulture);
             }
         }
         

@@ -1,4 +1,5 @@
 ﻿using System;
+using World.Properties;
 
 namespace World.Humans
 {
@@ -8,7 +9,7 @@ namespace World.Humans
         {
             if (string.IsNullOrEmpty(patronymic))
             {
-                throw new ArgumentException(Properties.Resources.InvalidPatronymic);
+                throw new ArgumentException(Resources.InvalidPatronymic);
             }
             Patronymic = patronymic;
         }
@@ -18,7 +19,7 @@ namespace World.Humans
         {
             var foregroundColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Student {0} {1}, {2}, age {3}", Name, Patronymic, Sex, Age);
+            Console.WriteLine(Resources.StudentParamOut, Name, Patronymic, Sex, Age);
             Console.ForegroundColor = foregroundColor;
         }
     }
