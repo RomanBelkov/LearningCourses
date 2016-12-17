@@ -3,7 +3,7 @@ using AdvancedWorld.Creatures;
 
 namespace AdvancedWorld.Helpers
 {
-    internal sealed class Names
+    public sealed class Names
     {
         private static readonly Random Rnd = new Random();
 
@@ -40,7 +40,7 @@ namespace AdvancedWorld.Helpers
             }
         }
 
-        internal static string PatronymicFromParentName(Sex sex, string parentName)
+        public static string PatronymicFromParentName(Sex sex, string parentName)
         {
             if (string.IsNullOrEmpty(parentName))
             {

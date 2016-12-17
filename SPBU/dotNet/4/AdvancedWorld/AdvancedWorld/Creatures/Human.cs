@@ -33,7 +33,7 @@ namespace AdvancedWorld.Creatures
         public string GiveName() => Names.GenerateName(Sex.Female);
     }
 
-    internal enum Sex
+    public enum Sex
     {
         Male,
         Female

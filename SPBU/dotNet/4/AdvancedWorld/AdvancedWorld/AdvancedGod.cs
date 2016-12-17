@@ -19,14 +19,14 @@ namespace AdvancedWorld
         private readonly List<Func<Sex, Human>> _maleGenerator = new List<Func<Sex, Human>>();
         private readonly List<Func<Sex, Human>> _femaleGenerator = new List<Func<Sex, Human>>();
 
-        internal AdvancedGod()
+        public AdvancedGod()
         {
-            _maleGenerator.Add(_makeStudent);
-            _maleGenerator.Add(_makeBotan);
+            _maleGenerator.Add(MakeStudent);
+            _maleGenerator.Add(MakeBotan);
 
-            _femaleGenerator.Add(_makeGirl);
-            _femaleGenerator.Add(_makePrettyGirl);
-            _femaleGenerator.Add(_makeSmartGirl);
+            _femaleGenerator.Add(MakeGirl);
+            _femaleGenerator.Add(MakePrettyGirl);
+            _femaleGenerator.Add(MakeSmartGirl);
         }
 
         public Tuple<Human, Human> GenerateHumansForDating()
@@ -120,19 +120,19 @@ namespace AdvancedWorld
             throw new WrongCoupleException(Resources.AdvancedGod_IncompatibleTypes);
         }
 
-        private readonly Func<Sex, Human> _makeStudent = sex =>
+        public readonly Func<Sex, Human> MakeStudent = sex =>
                 new Student(Names.GenerateName(sex), Names.GeneratePatronymic(sex), Randomizer.GetRandomAge());
 
-        private readonly Func<Sex, Human> _makeBotan = sex =>
+        public readonly Func<Sex, Human> MakeBotan = sex =>
             new Botan(Randomizer.GetRandomAge(), Names.GenerateName(sex), Names.GeneratePatronymic(sex), Randomizer.GetRandomAverageMark());
 
-        private readonly Func<Sex, Human> _makeGirl = sex =>
+        public readonly Func<Sex, Human> MakeGirl = sex =>
             new Girl(Names.GenerateName(sex), Names.GeneratePatronymic(sex), Randomizer.GetRandomAge());
 
-        private readonly Func<Sex, Human> _makePrettyGirl = sex =>
+        public readonly Func<Sex, Human> MakePrettyGirl = sex =>
             new PrettyGirl(Names.GenerateName(sex), Names.GeneratePatronymic(sex), Randomizer.GetRandomAge());
 
-        private readonly Func<Sex, Human> _makeSmartGirl = sex =>
+        public readonly Func<Sex, Human> MakeSmartGirl = sex =>
             new SmartGirl(Names.GenerateName(sex), Names.GeneratePatronymic(sex), Randomizer.GetRandomAge());
     }
 }
