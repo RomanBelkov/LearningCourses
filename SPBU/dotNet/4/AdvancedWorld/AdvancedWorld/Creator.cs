@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using AdvancedWorld.Creatures;
+using AdvancedWorld.Exceptions;
 using AdvancedWorld.Properties;
 
 namespace AdvancedWorld
@@ -54,7 +55,7 @@ namespace AdvancedWorld
                     }
                     else
                     {
-                        ((Human)child).PrintToConsole();
+                        ((Human) child).PrintToConsole();
                     }
                 }
                 else
@@ -64,7 +65,13 @@ namespace AdvancedWorld
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                if (e is ArgumentNullException || e is WrongCoupleException)
+                {
+                    Console.WriteLine(e.Message);
+                    return;
+                }
+
+                throw;
             }
             finally
             {
