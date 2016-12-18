@@ -8,7 +8,7 @@ namespace AdvancedWorld
 {
     internal sealed class CoupleAttributeEnumerator : IEnumerator<CoupleAttribute>
     {
-        private readonly IEnumerator _enumerator;
+        private readonly IEnumerator<Attribute> _enumerator;
 
         public CoupleAttributeEnumerator(Type humanType)
         {
@@ -27,7 +27,7 @@ namespace AdvancedWorld
 
         object IEnumerator.Current => _enumerator.Current;
 
-        public void Dispose() { }
+        public void Dispose() { _enumerator.Dispose(); }
 
         public bool MoveNext() => _enumerator.MoveNext();
 
