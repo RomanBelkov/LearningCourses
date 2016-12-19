@@ -34,11 +34,13 @@
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mark = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.pauseButton = new System.Windows.Forms.Button();
+            this.resumeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(472, 260);
+            this.startButton.Location = new System.Drawing.Point(310, 289);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(77, 23);
             this.startButton.TabIndex = 0;
@@ -74,14 +76,36 @@
             // 
             this.progressBar.Location = new System.Drawing.Point(13, 260);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(440, 23);
+            this.progressBar.Size = new System.Drawing.Size(536, 23);
             this.progressBar.TabIndex = 2;
+            // 
+            // pauseButton
+            // 
+            this.pauseButton.Enabled = false;
+            this.pauseButton.Location = new System.Drawing.Point(393, 289);
+            this.pauseButton.Name = "pauseButton";
+            this.pauseButton.Size = new System.Drawing.Size(75, 23);
+            this.pauseButton.TabIndex = 3;
+            this.pauseButton.Text = "Pause";
+            this.pauseButton.UseVisualStyleBackColor = true;
+            // 
+            // resumeButton
+            // 
+            this.resumeButton.Enabled = false;
+            this.resumeButton.Location = new System.Drawing.Point(474, 289);
+            this.resumeButton.Name = "resumeButton";
+            this.resumeButton.Size = new System.Drawing.Size(75, 23);
+            this.resumeButton.TabIndex = 4;
+            this.resumeButton.Text = "Resume";
+            this.resumeButton.UseVisualStyleBackColor = true;
             // 
             // ExamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 292);
+            this.ClientSize = new System.Drawing.Size(561, 322);
+            this.Controls.Add(this.resumeButton);
+            this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.studentsListView);
             this.Controls.Add(this.startButton);
@@ -101,6 +125,8 @@
         private System.Windows.Forms.ColumnHeader id;
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.ColumnHeader mark;
+        private System.Windows.Forms.Button pauseButton;
+        private System.Windows.Forms.Button resumeButton;
     }
 }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using Exam.Helpers;
 
 namespace Exam.Models
 {
@@ -25,19 +24,15 @@ namespace Exam.Models
             ExamStartedEvent.Set();
         }
 
+        
         public void ExamineStudent(Student student)
         {
             if (student == null)
             {
                 throw new ArgumentNullException();
             }
-            lock (_lock)
-            {
-                _communicator.CallStudent(student);
-                //Thread.Sleep(Randomizer.GetStudentExaminationTime());
-                //student.Mark = Randomizer.GetStudentMark();
-                //_communicator.EvaluateStudentKnowledge(student);
-            }
+
+           _communicator.CallStudent(student);
         }
     }
 }

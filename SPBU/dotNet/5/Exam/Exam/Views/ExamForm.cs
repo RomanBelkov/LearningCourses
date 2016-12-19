@@ -9,18 +9,21 @@ namespace Exam.Views
     internal partial class ExamForm : Form, IExamView
     {
         public event EventHandler ExamStarted;
+        public event EventHandler ExamPaused;
+        public event EventHandler ExamResumed;
 
         public ExamForm()
         {
             InitializeComponent();
             AdjustListViewColumnsWidth();
-            progressBar.Step = 1;
-            startButton.Click += OnButtonStartClick;
+            startButton.Click += OnStartButtonClick;
+            pauseButton.Click += OnPauseButtonClick;
+            resumeButton.Click += OnResumeButtonClick;
         }
 
-        public void SetProgressBarMaxValue(int max)
+        public void SetProgress(int percent)
         {
-            progressBar.Maximum = max; //progress presenter
+            InvokeIfRequired(() => { progressBar.Value = percent; }, progressBar);
         }
 
         public void InformAboutFinish()
@@ -28,6 +31,8 @@ namespace Exam.Views
             InvokeIfRequired(() =>
             {
                 startButton.Enabled = true;
+                resumeButton.Enabled = false;
+                pauseButton.Enabled = false;
                 MessageBox.Show(Resources.ExamIsOver, Resources.ExamIsOverCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }, this);
         }
@@ -48,7 +53,6 @@ namespace Exam.Views
         {
             InvokeIfRequired(() =>
             {
-                progressBar.PerformStep();
                 studentsListView.Items[studentId].SubItems[2].Text = studentMark.ToString();
             }, studentsListView);
         }
@@ -65,11 +69,23 @@ namespace Exam.Views
             }
         }
 
-        private void OnButtonStartClick(object sender, EventArgs e)
+        private void OnStartButtonClick(object sender, EventArgs e)
         {
             startButton.Enabled = false;
+            resumeButton.Enabled = true;
+            pauseButton.Enabled = true;
             ResetResultListView();
             ExamStarted?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void OnResumeButtonClick(object sender, EventArgs e)
+        {
+            ExamResumed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void OnPauseButtonClick(object sender, EventArgs e)
+        {
+            ExamPaused?.Invoke(this, EventArgs.Empty);
         }
 
         private void ResetResultListView()
@@ -90,5 +106,7 @@ namespace Exam.Views
             studentsListView.Columns[1].Width = nameWidth;
             studentsListView.Columns[2].Width = markWidth;
         }
+
+        
     }
 }
