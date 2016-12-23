@@ -18,9 +18,9 @@ namespace MyMovieApp.Controllers
         private readonly Search _search;
         private readonly MoviesEditor _moviesEditor;
 
-        private IRepo<Movie> _movieRepository;
-        private IRepo<Director> _directorRepository;
-        private IRepo<Actor> _actorRepository;
+        private IRepo<Movie> _movieRepo;
+        private IRepo<Director> _directorRepo;
+        private IRepo<Actor> _actorRepo;
 
         private readonly GetMoviesAsyncHelper _getMovies;
 
@@ -32,14 +32,14 @@ namespace MyMovieApp.Controllers
             _search = new Search();
             _moviesEditor = new MoviesEditor();
 
-            _getMovies = new GetMoviesAsyncHelper(_movieRepository, _directorRepository, _actorRepository);
+            _getMovies = new GetMoviesAsyncHelper(_movieRepo, _directorRepo, _actorRepo);
         }
 
         private void InitializeRepositories(DataModelContainer dbContainer)
         {
-            _movieRepository = new MovieEfRepo(dbContainer.Movies, dbContainer);
-            _directorRepository = new DirectorEfRepo(dbContainer.Directors, dbContainer);
-            _actorRepository = new ActorEfRepo(dbContainer.Actors, dbContainer);
+            _movieRepo = new MovieEfRepo(dbContainer.Movies, dbContainer);
+            _directorRepo = new DirectorEfRepo(dbContainer.Directors, dbContainer);
+            _actorRepo = new ActorEfRepo(dbContainer.Actors, dbContainer);
         }
 
         internal Form RenderMainView()
@@ -50,12 +50,12 @@ namespace MyMovieApp.Controllers
 
             _mainForm.RepopulateDatabase += async () =>
             {
-                await _movieRepository.DropDb();
-                await _actorRepository.DropDb();
-                await _directorRepository.DropDb();
+                await _movieRepo.DropDb();
+                await _actorRepo.DropDb();
+                await _directorRepo.DropDb();
                 
 
-                await DefaultDataHelper.FillRepositories(_movieRepository, _directorRepository, _actorRepository);
+                await DefaultDataHelper.FillRepositories(_movieRepo, _directorRepo, _actorRepo);
 
                 GetMovies();
             };
@@ -71,6 +71,7 @@ namespace MyMovieApp.Controllers
                     _moviesEditor.MovieId = movie.Id;
                     _moviesEditor.Name = movie.Name;
                     _moviesEditor.Year = movie.Year;
+                    _moviesEditor.FilmingCountry = movie.FilmingCountry;
                     _moviesEditor.Image = movie.ImageUrl;
                     _moviesEditor.Actors = new List<Actor>(movie.Actors);
                     _moviesEditor.Director = movie.Director1;
@@ -80,8 +81,8 @@ namespace MyMovieApp.Controllers
 
             _mainForm.AddMovieActor += async name =>
             {
-                var query = _actorRepository.GetAllSet().Where(actor => actor.Name == name);
-                var foundActor = (await _actorRepository.ToListAsync(query)).FirstOrDefault();
+                var query = _actorRepo.GetAllSet().Where(actor => actor.Name == name);
+                var foundActor = (await _actorRepo.ToListAsync(query)).FirstOrDefault();
                 if (foundActor != null)
                 {
                     if (_moviesEditor.Actors.Contains(foundActor)) return;
@@ -90,7 +91,7 @@ namespace MyMovieApp.Controllers
                 else
                 {
                     var newActor = new Actor { Name = name };
-                    await _actorRepository.Add(newActor);
+                    await _actorRepo.Add(newActor);
                     var actors = _moviesEditor.Actors;
                     actors.Add(newActor);
                     _moviesEditor.Actors = actors;
@@ -142,26 +143,27 @@ namespace MyMovieApp.Controllers
             _mainForm.SetControlsState(false);
 
             var id = _moviesEditor.MovieId;
-            var model = (await _movieRepository.ToArrayAsync(_movieRepository.GetAllSet().Where(movie => movie.Id == id)))[0];
+            var model = (await _movieRepo.ToArrayAsync(_movieRepo.GetAllSet().Where(movie => movie.Id == id)))[0];
 
             string directorName;
             var actorNames = new List<string>();
             _mainForm.UpdateMoviesEditorState(_moviesEditor, out directorName, actorNames);
 
-            var existing = await _directorRepository.ToArrayAsync(
-                _directorRepository.GetAllSet().Where(director => director.Name == directorName));
+            var existing = await _directorRepo.ToArrayAsync(
+                _directorRepo.GetAllSet().Where(director => director.Name == directorName));
 
             model.Name = _moviesEditor.Name;
             model.Year = _moviesEditor.Year;
+            model.FilmingCountry = _moviesEditor.FilmingCountry;
             model.Director1 = existing.Length == 0 ? new Director { Name = directorName } : existing[0];
             model.Actors = _moviesEditor.Actors;
 
             if (model.Director1.Id < 1)
             {
-                await _directorRepository.Add(model.Director1);
+                await _directorRepo.Add(model.Director1);
             }
 
-            await _movieRepository.Add(model);
+            await _movieRepo.Add(model);
 
             _mainForm.SetControlsState(true);
         }
@@ -174,7 +176,7 @@ namespace MyMovieApp.Controllers
                  select MessageBox.Show(string.Format(Properties.Resources.ApproveDeleteMovie, t.Name), Properties.Resources.ApproveDeleteMovieCaption, 
                  MessageBoxButtons.YesNo)).All(res => !res.HasFlag(DialogResult.No));
             if (!confirmed) return;
-            await Task.WhenAll(selected.Select(x => _movieRepository.Delete(x)).ToArray());
+            await Task.WhenAll(selected.Select(x => _movieRepo.Delete(x)).ToArray());
             GetMovies();
         }
 
