@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Linq;
+
 namespace MyMovieApp
 {
     using System;
@@ -17,7 +19,7 @@ namespace MyMovieApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Movie()
         {
-            this.Actors = new HashSet<Actor>();
+            this.Actors = new HashSet<Actor>().ToList();
         }
     
         public int Id { get; set; }
@@ -28,6 +30,6 @@ namespace MyMovieApp
     
         public virtual Director Director1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Actor> Actors { get; set; }
+        public virtual List<Actor> Actors { get; set; }
     }
 }

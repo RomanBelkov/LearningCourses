@@ -85,9 +85,6 @@
     <Compile Include="Actor.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Autocompletes\ActorsAutocomplete.cs" />
-    <Compile Include="Autocompletes\DirectorsAutocomplete.cs" />
-    <Compile Include="Autocompletes\IAutocomplete.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="DataModel.Context.cs">
       <AutoGen>True</AutoGen>

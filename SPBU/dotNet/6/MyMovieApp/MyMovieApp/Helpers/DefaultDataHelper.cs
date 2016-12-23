@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyMovieApp.Repos;
@@ -30,33 +32,33 @@ namespace MyMovieApp.Helpers
             var reno = new Actor { Name = "Жан Рено" };
             var oldman = new Actor { Name = "Гари Олдман" };
 
-            var movieData = new[] {
-                new { Name = "Побег из Шоушенка", Year = 1994, Country = "США", Image = "326.jpg",
-                    Director = frank, Actors = new[] { robbins, freeman } },
+            var movieData = new List<Movie> {
+                new Movie { Name = "Побег из Шоушенка", Year = 1994, FilmingCountry = "США", ImageUrl = "326.jpg",
+                    Director1 = frank, Actors = new List<Actor> { robbins, freeman } },
 
-                new { Name = "Бэтмен: Начало", Year = 2005, Country = "США",  Image = "47237.jpg",
-                    Director = nolan, Actors = new[] { freeman } },
+                new Movie { Name = "Бэтмен: Начало", Year = 2005, FilmingCountry= "США",  ImageUrl = "47237.jpg",
+                    Director1 = nolan, Actors = new List<Actor> { freeman } },
 
-                new { Name = "Зеленая миля", Year = 1999, Country = "США", Image = "435.jpg",
-                    Director = frank, Actors = new[] { hanks }},
+                new Movie { Name = "Зеленая миля", Year = 1999, FilmingCountry= "США", ImageUrl = "435.jpg",
+                    Director1 = frank, Actors = new List<Actor> { hanks }},
 
-                new { Name = "Спасти рядового Райана", Year = 1998, Country = "США", Image = "371.jpg",
-                    Director = spilberg, Actors = new[] { hanks, burns } },
+                new Movie { Name = "Спасти рядового Райана", Year = 1998, FilmingCountry = "США", ImageUrl = "371.jpg",
+                    Director1 = spilberg, Actors = new List<Actor> { hanks, burns } },
 
-                new { Name = "Однажды в Америке", Year = 1983, Country = "Италия", Image = "469.jpg",
-                    Director = leone, Actors = new[] { deniro } },
+                new Movie { Name = "Однажды в Америке", Year = 1983, FilmingCountry = "Италия", ImageUrl = "469.jpg",
+                    Director1 = leone, Actors = new List<Actor> { deniro } },
 
-                new { Name ="Семь", Year = 1995, Country = "США", Image="377.jpg",
-                    Director = fincher, Actors = new[] { freeman, pitt } },
+                new Movie { Name ="Семь", Year = 1995, FilmingCountry = "США", ImageUrl="377.jpg",
+                    Director1 = fincher, Actors = new List<Actor> { freeman, pitt } },
 
-                new { Name ="Бойцовский клуб", Year = 1999, Country = "США", Image="361.jpg",
-                    Director = fincher, Actors = new[] { pitt, norton } },
+                new Movie { Name ="Бойцовский клуб", Year = 1999, FilmingCountry = "США", ImageUrl="361.jpg",
+                    Director1 = fincher, Actors = new List<Actor> { pitt, norton } },
 
-                new { Name ="Американская история Х", Year = 1998, Country = "США", Image="382.jpg",
-                    Director = tkey, Actors = new[] { norton } },
+                new Movie { Name ="Американская история Х", Year = 1998, FilmingCountry = "США", ImageUrl="382.jpg",
+                    Director1 = tkey, Actors = new List<Actor> { norton } },
 
-                new { Name ="Леон", Year = 1994, Country = "Франция", Image="389.jpg",
-                    Director = besson, Actors = new[] { reno, oldman } },
+                new Movie { Name ="Леон", Year = 1994, FilmingCountry = "Франция", ImageUrl="389.jpg",
+                    Director1 = besson, Actors = new List<Actor> { reno, oldman } },
 
             };
 
@@ -70,16 +72,16 @@ namespace MyMovieApp.Helpers
             await actorRepository.Add(burns);
 
             var imagesBaseDir = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\DefaultPictures\"));
-            for (var i = 0; i < movieData.Length; i++)
+            for (var i = 0; i < movieData.Count; i++)
             {
                 await movieRepository.Add(new Movie
                 {
                     //Id = i + 1,
                     Name = movieData[i].Name,
                     Year = movieData[i].Year,
-                    FilmingCountry = movieData[i].Country,
-                    ImageUrl = imagesBaseDir + movieData[i].Image,
-                    Director1 = movieData[i].Director,
+                    FilmingCountry = movieData[i].FilmingCountry,
+                    ImageUrl = imagesBaseDir + movieData[i].ImageUrl,
+                    Director1 = movieData[i].Director1,
                     Actors = movieData[i].Actors,
 
                 });

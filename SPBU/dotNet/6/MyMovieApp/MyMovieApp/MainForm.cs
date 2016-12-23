@@ -16,7 +16,7 @@ namespace MyMovieApp
         internal delegate void FindFilmEvent();
         internal delegate void GoBackEvent();
         internal delegate void AboutOpenEvent();
-        internal delegate void DeleteActorAtPositionEvent(int position);
+        internal delegate void DeleteActorEvent(int position);
         internal delegate void SaveMovieEvent();
         internal delegate void AddMovieActorEvent(string name);
 
@@ -26,7 +26,7 @@ namespace MyMovieApp
         internal event FindFilmEvent FindFilm;
         internal event GoBackEvent GoBack;
         internal event AboutOpenEvent AboutOpen;
-        internal event DeleteActorAtPositionEvent DeleteActor;
+        internal event DeleteActorEvent DeleteActor;
         internal event SaveMovieEvent SaveMovie;
         internal event AddMovieActorEvent AddMovieActor;
 
@@ -63,9 +63,6 @@ namespace MyMovieApp
 
             movieYearTextBox.SetErrorProvider(errorProvider);
 
-            //editFormDirector.SetSource(directorsAutocompleteSource);
-            //editFormAddActor.SetSource(actorsAutocompleteSource);
-
             //editMovieFormHelpProvider.SetShowHelp(editFormNameText, true);
             //editMovieFormHelpProvider.SetHelpString(editFormNameText, "Название фильма");
 
@@ -81,7 +78,6 @@ namespace MyMovieApp
 
         private void UpdateGridView(MoviesGrid moviesGrid)
         {
-
             const int moviesRowHeight = 200;
             DataGridViewRow currentRow = null;
             var cells = new List<DataGridViewImageCell>();
@@ -140,7 +136,7 @@ namespace MyMovieApp
 
         internal void ShowMovieGrid()
         {
-            //editMoviePanel.Hide();
+            movieEditPanel.Hide();
             dataGridView.Left = 0;
             dataGridView.Width = ClientSize.Width;
             dataGridView.Show();
@@ -153,9 +149,9 @@ namespace MyMovieApp
 
             dataGridView.Hide();
             gridTitleLabel.Hide();
-            //editMoviePanel.Left = 0;
-            //editMoviePanel.Width = ClientSize.Width;
-            //editMoviePanel.Show();
+            movieEditPanel.Left = 0;
+            movieEditPanel.Width = ClientSize.Width;
+            movieEditPanel.Show();
 
             moviesEditor.StateChanged += UpdateEditForm;
 
@@ -208,6 +204,21 @@ namespace MyMovieApp
         private void OnOpenBdToolStripMenuItemClick(object sender, EventArgs e)
         {
             RepopulateDatabase?.Invoke();
+        }
+
+        private void OnEditMovieToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            EditFilm?.Invoke(GetSelectedMovies());
+        }
+
+        private void OnAddActorButtonClick(object sender, EventArgs e)
+        {
+            AddMovieActor?.Invoke(addActorNameTextBox.Text);
+        }
+
+        private void OnDeleteActorButtonClick(object sender, EventArgs e)
+        {
+            DeleteActor?.Invoke(movieActorsListBox.SelectedIndex);
         }
 
         private void OnMainFormResize(object sender, EventArgs e)

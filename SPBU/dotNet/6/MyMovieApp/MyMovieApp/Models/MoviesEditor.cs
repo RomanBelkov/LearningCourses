@@ -75,6 +75,7 @@ namespace MyMovieApp.Models
 
         internal void RemoveActorAt(int i)
         {
+            if (i < 0) return;
             _actors.RemoveAt(i);
             Update();
         }

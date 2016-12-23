@@ -50,9 +50,10 @@ namespace MyMovieApp.Controllers
 
             _mainForm.RepopulateDatabase += async () =>
             {
+                await _movieRepository.DropDb();
                 await _actorRepository.DropDb();
                 await _directorRepository.DropDb();
-                await _movieRepository.DropDb();
+                
 
                 await DefaultDataHelper.FillRepositories(_movieRepository, _directorRepository, _actorRepository);
 
@@ -83,13 +84,16 @@ namespace MyMovieApp.Controllers
                 var foundActor = (await _actorRepository.ToListAsync(query)).FirstOrDefault();
                 if (foundActor != null)
                 {
+                    if (_moviesEditor.Actors.Contains(foundActor)) return;
                     _moviesEditor.Actors.Add(foundActor);
                 }
                 else
                 {
                     var newActor = new Actor { Name = name };
                     await _actorRepository.Add(newActor);
-                    _moviesEditor.Actors.Add(newActor);
+                    var actors = _moviesEditor.Actors;
+                    actors.Add(newActor);
+                    _moviesEditor.Actors = actors;
                 }
             };
 
