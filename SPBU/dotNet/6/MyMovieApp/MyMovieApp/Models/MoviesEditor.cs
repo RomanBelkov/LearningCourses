@@ -40,6 +40,17 @@ namespace MyMovieApp.Models
             }
         }
 
+        private string _filmingCountry;
+        internal string FilmingCountry
+        {
+            get { return _filmingCountry; }
+            set
+            {
+                _filmingCountry = value;
+                Update();
+            }
+        }
+
         private string _image;
         internal string Image
         {

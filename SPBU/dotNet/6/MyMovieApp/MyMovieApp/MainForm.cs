@@ -127,6 +127,7 @@ namespace MyMovieApp
         {
             movieNameTextBox.Text = moviesEditor.Name;
             movieYearTextBox.Text = moviesEditor.Year.ToString();
+            movieCountryTextBox.Text = moviesEditor.FilmingCountry;
             movieDirectorNameTextBox.Text = moviesEditor.Director.Name;
 
             moviePictureBox.Image = ImagesHelper.FromFile(moviesEditor.Image);
@@ -161,6 +162,7 @@ namespace MyMovieApp
         internal void UpdateMoviesEditorState(MoviesEditor moviesEditor, out string directorName, List<string> actorNames)
         {
             moviesEditor.Name = movieNameTextBox.Text;
+            moviesEditor.FilmingCountry = movieCountryTextBox.Text;
             moviesEditor.Year = int.Parse(movieYearTextBox.Text);
             directorName = movieDirectorNameTextBox.Text;
             actorNames.AddRange(

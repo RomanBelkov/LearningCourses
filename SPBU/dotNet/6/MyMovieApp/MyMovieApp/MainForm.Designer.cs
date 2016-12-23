@@ -37,11 +37,9 @@
             this.movieNameLabel = new System.Windows.Forms.Label();
             this.movieDirectorLabel = new System.Windows.Forms.Label();
             this.movieYearLabel = new System.Windows.Forms.Label();
-            this.movieActorsLabel = new System.Windows.Forms.Label();
             this.movieCountryLabel = new System.Windows.Forms.Label();
             this.movieAddButton = new System.Windows.Forms.Button();
             this.movieChangeButton = new System.Windows.Forms.Button();
-            this.movieDeleteButton = new System.Windows.Forms.Button();
             this.movieActorsListBox = new System.Windows.Forms.ListBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -80,6 +78,8 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(12, 61);
             this.dataGridView.Name = "dataGridView";
@@ -134,15 +134,6 @@
             this.movieYearLabel.TabIndex = 8;
             this.movieYearLabel.Text = "Year";
             // 
-            // movieActorsLabel
-            // 
-            this.movieActorsLabel.AutoSize = true;
-            this.movieActorsLabel.Location = new System.Drawing.Point(288, 58);
-            this.movieActorsLabel.Name = "movieActorsLabel";
-            this.movieActorsLabel.Size = new System.Drawing.Size(37, 13);
-            this.movieActorsLabel.TabIndex = 9;
-            this.movieActorsLabel.Text = "Actors";
-            // 
             // movieCountryLabel
             // 
             this.movieCountryLabel.AutoSize = true;
@@ -171,16 +162,6 @@
             this.movieChangeButton.Text = "Change";
             this.movieChangeButton.UseVisualStyleBackColor = true;
             this.movieChangeButton.Click += new System.EventHandler(this.OnMovieChangeButtonClick);
-            // 
-            // movieDeleteButton
-            // 
-            this.movieDeleteButton.Location = new System.Drawing.Point(291, 283);
-            this.movieDeleteButton.Name = "movieDeleteButton";
-            this.movieDeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.movieDeleteButton.TabIndex = 13;
-            this.movieDeleteButton.Text = "Delete";
-            this.movieDeleteButton.UseVisualStyleBackColor = true;
-            this.movieDeleteButton.Click += new System.EventHandler(this.OnMovieDeleteButtonClick);
             // 
             // movieActorsListBox
             // 
@@ -250,6 +231,7 @@
             this.deleteMovieToolStripMenuItem.Name = "deleteMovieToolStripMenuItem";
             this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.deleteMovieToolStripMenuItem.Text = "Delete movie";
+            this.deleteMovieToolStripMenuItem.Click += new System.EventHandler(this.OnMovieDeleteButtonClick);
             // 
             // findMovieToolStripMenuItem
             // 
@@ -276,6 +258,7 @@
             this.moviePictureBox.Location = new System.Drawing.Point(3, 3);
             this.moviePictureBox.Name = "moviePictureBox";
             this.moviePictureBox.Size = new System.Drawing.Size(241, 313);
+            this.moviePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moviePictureBox.TabIndex = 18;
             this.moviePictureBox.TabStop = false;
             // 
@@ -291,9 +274,7 @@
             this.movieEditPanel.Controls.Add(this.moviePictureBox);
             this.movieEditPanel.Controls.Add(this.movieDirectorNameTextBox);
             this.movieEditPanel.Controls.Add(this.movieChangeButton);
-            this.movieEditPanel.Controls.Add(this.movieDeleteButton);
             this.movieEditPanel.Controls.Add(this.movieCountryLabel);
-            this.movieEditPanel.Controls.Add(this.movieActorsLabel);
             this.movieEditPanel.Controls.Add(this.movieCountryTextBox);
             this.movieEditPanel.Location = new System.Drawing.Point(55, 61);
             this.movieEditPanel.Name = "movieEditPanel";
@@ -383,11 +364,9 @@
         private System.Windows.Forms.Label movieNameLabel;
         private System.Windows.Forms.Label movieDirectorLabel;
         private System.Windows.Forms.Label movieYearLabel;
-        private System.Windows.Forms.Label movieActorsLabel;
         private System.Windows.Forms.Label movieCountryLabel;
         private System.Windows.Forms.Button movieAddButton;
         private System.Windows.Forms.Button movieChangeButton;
-        private System.Windows.Forms.Button movieDeleteButton;
         private System.Windows.Forms.ListBox movieActorsListBox;
         private YearTextBox movieYearTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider;
