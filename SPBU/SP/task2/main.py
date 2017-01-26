@@ -137,23 +137,27 @@ if __name__ == "__main__":
     print("Rand: " + str(Rand))
     print("FowMal: " + str(FowMal))
 
-    plt.plot(DavBoul)
+    x_range = range(min_k, max_k + 1)
+
+    plt.plot(x_range, DavBoul, 'ro')
     plt.ylabel('DavBoul')
     plt.show()
 
-    plt.plot(CalHar)
+    plt.plot(x_range, CalHar, 'ro')
     plt.ylabel('CalHar')
     plt.show()
 
-    plt.plot(Rand)
+    plt.plot(x_range, Rand, 'ro')
     plt.ylabel('Rand')
     plt.show()
 
-    plt.plot(FowMal)
+    plt.plot(x_range, FowMal, 'ro')
     plt.ylabel('FowMal')
     plt.show()
 
-    for arr in [DavBoul, CalHar]:
+    delta_CalHar = [(CalHar[k + 1] - CalHar[k]) - (CalHar[k] - CalHar[k - 1]) for k in xrange(min_k + 1, max_k)]
+
+    for arr in [DavBoul, delta_CalHar]:
         min = (0, float("inf"))
         for i, x in enumerate(arr):
             if x < min[1]:
