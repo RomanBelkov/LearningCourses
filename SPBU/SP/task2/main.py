@@ -155,7 +155,7 @@ if __name__ == "__main__":
     plt.ylabel('FowMal')
     plt.show()
 
-    delta_CalHar = [(CalHar[k + 1] - CalHar[k]) - (CalHar[k] - CalHar[k - 1]) for k in xrange(min_k + 1, max_k)]
+    delta_CalHar = [(CalHar[k + 1] - CalHar[k]) - (CalHar[k] - CalHar[k - 1]) for k in xrange(1, max_k - min_k)]
 
     for arr in [DavBoul, delta_CalHar]:
         min = (0, float("inf"))
