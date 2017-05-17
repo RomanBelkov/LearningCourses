@@ -183,7 +183,7 @@
     {\ifthenelse{\equal{\my@title@type@ru}{master}}
     {Магистерская диссертация}
     {\ifthenelse{\equal{\my@title@type@ru}{bachelor}}
-    {Бакалаврская работа}
+    {Выпускная квалификационная работа}
     }}}
     \\}
     \vskip 2em
