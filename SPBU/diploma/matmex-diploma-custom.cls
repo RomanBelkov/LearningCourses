@@ -58,13 +58,24 @@
 %% В XeLaTex заменой известного пакета babel является пакет polyglossia.
 %% Теперь у нас будут переносы слов
 \usepackage{polyglossia}
+\usepackage{ucharclasses}
+\usepackage{microtype} % better management of overfulls
+
 \setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setTransitionsForLatin{\begingroup\hyphenrules{english}}{\endgroup}
+
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
 
 
 %% Отступ в первом абзаце
 \usepackage{indentfirst}
 %% Гиперссылки
 \usepackage[colorlinks=true,urlcolor=black,linkcolor=black,filecolor=black,citecolor=black]{hyperref}
+\def\UrlBreaks{\do\/\do-}
 
 %% Включение графических файлов
 %% we don't need to load graphicx since it will be loaded by xunicode (which is loaded by fontspec) 
